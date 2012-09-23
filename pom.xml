@@ -91,6 +91,10 @@
                 <requireJavaVersion>
                   <version>[${java.version},)</version>
                 </requireJavaVersion>
+                <requireProperty>
+                  <property>env.JAVA_HOME</property>
+                  <message>You must set JAVA_HOME.</message>
+                </requireProperty>
                 <requireUpperBoundDeps />
                 <banDuplicateClasses>
                   <findAllDuplicates>true</findAllDuplicates>
