@@ -84,16 +84,12 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>(${maven.version},)</version>
+                  <version>[${maven.version},)</version>
+                  <message>Requires at least maven ${maven.version}</message>
                 </requireMavenVersion>
-               <requireJavaVersion>
+                <requireJavaVersion>
                   <version>[${java.version},)</version>
                 </requireJavaVersion>
-               <requirePluginVersions>
-                  <banLatest>true</banLatest>
-                  <banRelease>true</banRelease>
-                  <banSnapshots>true</banSnapshots>
-                </requirePluginVersions>
                 <requireUpperBoundDeps />
                 <banDuplicateClasses>
                   <findAllDuplicates>true</findAllDuplicates>
@@ -121,6 +117,19 @@
                 </requireBackwardCompatibility>
               </rules>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jasig.maven</groupId>
+        <artifactId>maven-jasig-legal-plugin</artifactId>
+        <version>1.0.2</version>
+        <executions>
+          <execution>
+            <id>copy-files</id>
+            <goals>
+              <goal>copy-files</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
