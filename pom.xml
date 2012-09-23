@@ -188,6 +188,9 @@
         <plugin>
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.4</version>
+          <configuration>
+            <useAgent>true</useAgent>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
