@@ -198,11 +198,6 @@
             <artifactId>enforcer-rule</artifactId>
             <version>0.9.15</version>
           </dependency>
-          <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.0-alpha-3</version>
-          </dependency>
         </dependencies>
         <executions>
           <execution>
@@ -224,16 +219,6 @@
                   <message>You must set JAVA_HOME.</message>
                 </requireProperty>
                 <requireUpperBoundDeps />
-                <banDuplicateClasses>
-                  <findAllDuplicates>true</findAllDuplicates>
-                </banDuplicateClasses>
-                <requireFilesExist>
-                  <files>
-                    <file>README.md</file>
-                    <file>LICENSE</file>
-                    <file>NOTICE</file>
-                  </files>
-                </requireFilesExist>
               </rules>
             </configuration>
           </execution>
