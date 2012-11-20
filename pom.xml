@@ -61,84 +61,6 @@
   </ciManagement>
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>org.semver</groupId>
-            <artifactId>enforcer-rule</artifactId>
-            <version>0.9.15</version>
-          </dependency>
-          <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.0-alpha-3</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <id>enforce-maven</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>[${maven.version},)</version>
-                  <message>Requires at least maven ${maven.version}</message>
-                </requireMavenVersion>
-                <requireJavaVersion>
-                  <version>[${java.version},)</version>
-                </requireJavaVersion>
-                <requireProperty>
-                  <property>env.JAVA_HOME</property>
-                  <message>You must set JAVA_HOME.</message>
-                </requireProperty>
-                <requireUpperBoundDeps />
-                <banDuplicateClasses>
-                  <findAllDuplicates>true</findAllDuplicates>
-                </banDuplicateClasses>
-                <requireFilesExist>
-                  <files>
-                    <file>README.md</file>
-                    <file>LICENSE</file>
-                    <file>NOTICE</file>
-                  </files>
-                </requireFilesExist>
-              </rules>
-            </configuration>
-          </execution>
-          <execution>
-            <id>check-backward-compatibility</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireBackwardCompatibility implementation="org.semver.enforcer.RequireBackwardCompatibility">
-                  <compatibilityType>BACKWARD_COMPATIBLE_USER</compatibilityType>
-                </requireBackwardCompatibility>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.jasig.maven</groupId>
-        <artifactId>maven-jasig-legal-plugin</artifactId>
-        <version>1.0.2</version>
-        <executions>
-          <execution>
-            <id>copy-files</id>
-            <goals>
-              <goal>copy-files</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
     <pluginManagement>
       <!-- Make sure plugins defined by parent POMs are up-to-date. -->
       <plugins>
@@ -266,5 +188,84 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.1.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.semver</groupId>
+            <artifactId>enforcer-rule</artifactId>
+            <version>0.9.15</version>
+          </dependency>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>extra-enforcer-rules</artifactId>
+            <version>1.0-alpha-3</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>[${maven.version},)</version>
+                  <message>Requires at least maven ${maven.version}</message>
+                </requireMavenVersion>
+                <requireJavaVersion>
+                  <version>[${java.version},)</version>
+                </requireJavaVersion>
+                <requireProperty>
+                  <property>env.JAVA_HOME</property>
+                  <message>You must set JAVA_HOME.</message>
+                </requireProperty>
+                <requireUpperBoundDeps />
+                <banDuplicateClasses>
+                  <findAllDuplicates>true</findAllDuplicates>
+                </banDuplicateClasses>
+                <requireFilesExist>
+                  <files>
+                    <file>README.md</file>
+                    <file>LICENSE</file>
+                    <file>NOTICE</file>
+                  </files>
+                </requireFilesExist>
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>check-backward-compatibility</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireBackwardCompatibility implementation="org.semver.enforcer.RequireBackwardCompatibility">
+                  <compatibilityType>BACKWARD_COMPATIBLE_USER</compatibilityType>
+                </requireBackwardCompatibility>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jasig.maven</groupId>
+        <artifactId>maven-jasig-legal-plugin</artifactId>
+        <version>1.0.2</version>
+        <executions>
+          <execution>
+            <id>copy-files</id>
+            <goals>
+              <goal>copy-files</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>
