@@ -26,19 +26,5 @@ Use following snippet as a basis for a new project:
     <url>git@github.com:jeluard/....git</url>
   </scm>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals><goal>check</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-
 </project>
 ```
