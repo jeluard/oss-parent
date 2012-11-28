@@ -192,6 +192,11 @@
             <artifactId>enforcer-rule</artifactId>
             <version>0.9.15</version>
           </dependency>
+          <dependency>
+            <groupId>com.github.jeluard.parent-enforcer-rule</groupId>
+            <artifactId>enforcer-rule</artifactId>
+            <version>1.0</version>
+          </dependency>
         </dependencies>
         <executions>
           <execution>
@@ -212,12 +217,24 @@
                   <property>env.JAVA_HOME</property>
                   <message>You must set JAVA_HOME.</message>
                 </requireProperty>
-                <requireUpperBoundDeps />
               </rules>
             </configuration>
           </execution>
           <execution>
-            <id>check-backward-compatibility</id>
+            <id>check-dependency-convergence</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <fail>false</fail>
+              <rules>
+                <dependencyConvergence />
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>enforce-backward-compatibility</id>
             <phase>verify</phase>
             <goals>
               <goal>enforce</goal>
@@ -230,6 +247,18 @@
               </rules>
             </configuration>
           </execution>
+          <!--execution>
+            <id>enforce-parent</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireParentVersion implementation="com.github.jeluard.maven.ParentEnforcerRule" />
+              </rules>
+            </configuration>
+          </execution-->
         </executions>
       </plugin>
       <plugin>
