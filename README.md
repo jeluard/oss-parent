@@ -17,7 +17,7 @@ Use following snippet as a basis for a new project:
   <parent>
     <groupId>com.github.jeluard</groupId>
     <artifactId>oss-parent</artifactId>
-    <version>1</version>
+    <version>2</version>
   </parent>
 
   <scm>
