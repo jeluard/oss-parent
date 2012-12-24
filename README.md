@@ -26,21 +26,5 @@ Use following snippet as a basis for a new project:
     <url>git@github.com:jeluard/....git</url>
   </scm>
 
-  <build>
-    <plugins>
-      <!--
-        Add this to check no wrong JDK API (i.e. from more recent version) is used.
-        This is not necessary when using the right rt.jar as bootstrap classpath but this is a pain in practise.
-        See:
-          * https://blogs.oracle.com/darcy/entry/how_to_cross_compile_for
-          * https://blogs.oracle.com/darcy/entry/bootclasspath_older_source
-      -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>animal-sniffer-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
-
 </project>
 ```

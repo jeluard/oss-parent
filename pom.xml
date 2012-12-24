@@ -88,16 +88,18 @@
           </configuration>
         </plugin>
         <plugin>
+          <!--
+            This is not necessary when using the right rt.jar as bootstrap classpath but this is a pain in practise.
+            See:
+             * https://blogs.oracle.com/darcy/entry/how_to_cross_compile_for
+             * https://blogs.oracle.com/darcy/entry/bootclasspath_older_source
+           -->
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>animal-sniffer-maven-plugin</artifactId>
           <version>1.9</version>
           <executions>
             <execution>
               <id>check-java-version</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>check</goal>
-              </goals>
               <configuration>
                 <signature>
                   <groupId>org.codehaus.mojo.signature</groupId>
@@ -158,7 +160,7 @@
           <configuration>
             <pushChanges>false</pushChanges>
             <localCheckout>true</localCheckout>
-            <preparationGoals>clean verify license:check</preparationGoals>
+            <preparationGoals>clean verify animal:check license:check</preparationGoals>
           </configuration>
         </plugin>
         <plugin>
