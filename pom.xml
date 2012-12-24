@@ -19,6 +19,7 @@
 
   <properties>
     <java.version>1.6</java.version>
+    <javaAnimalSniffer.version>1.6</javaAnimalSniffer.version>
     <maven.version>3.0.3</maven.version>
     <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
   </properties>
@@ -101,7 +102,7 @@
               <configuration>
                 <signature>
                   <groupId>org.codehaus.mojo.signature</groupId>
-                  <artifactId>java14</artifactId>
+                  <artifactId>java${javaAnimalSniffer.version}</artifactId>
                   <version>1.0</version>
                 </signature>
               </configuration>
