@@ -85,7 +85,6 @@
             <target>${java.version}</target>
             <showDeprecation>true</showDeprecation>
             <showWarnings>true</showWarnings>
-            <verbose>true</verbose>
           </configuration>
         </plugin>
         <plugin>
