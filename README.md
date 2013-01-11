@@ -36,8 +36,6 @@ To do a complete release:
 ```
 mvn release:prepare
 mvn release:perform
-mvn nexus-staging:close
-mvn nexus:staging:release
 ```
 
 You might want to run following before:
