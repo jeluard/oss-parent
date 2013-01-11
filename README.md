@@ -43,6 +43,6 @@ mvn nexus:staging:release
 You might want to run following before:
 
 ```
-mvn animal:check
+mvn animal-sniffer:check
 mvn license:check //mvn license:format to apply proper license
 ```
