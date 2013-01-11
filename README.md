@@ -28,3 +28,21 @@ Use following snippet as a basis for a new project:
 
 </project>
 ```
+
+# Release
+
+To do a complete release:
+
+```
+mvn release:prepare
+mvn release:perform
+mvn nexus-staging:close
+mvn nexus:staging:release
+```
+
+You might want to run following before:
+
+```
+mvn animal:check
+mvn license:check //mvn license:format to apply proper license
+```
