@@ -4,7 +4,7 @@
   <groupId>com.github.jeluard</groupId>
   <artifactId>oss-parent</artifactId>
   <packaging>pom</packaging>
-  <version>7-SNAPSHOT</version>
+  <version>6-SNAPSHOT</version>
 
   <name>jeluard github parent POM</name>
   <description>Parent POM for jeluard OpenSource projects</description>
@@ -46,7 +46,7 @@
   <!-- SCM settings can't rely on properties are they are relative to their parent (and rewritten by release plugin) -->
   <scm>
     <connection>scm:git:git@github.com:jeluard/oss-parent.git</connection>
-    <developerConnection>scm:git:git@github.com:jeluard/oss-parent.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:jeluardi/oss-parent.git</developerConnection>
     <url>git@github.com:jeluard/oss-parent.git</url>
     <tag>HEAD</tag>
   </scm>
