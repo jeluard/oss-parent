@@ -4,7 +4,7 @@
   <groupId>com.github.jeluard</groupId>
   <artifactId>oss-parent</artifactId>
   <packaging>pom</packaging>
-  <version>7-SNAPSHOT</version>
+  <version>6-SNAPSHOT</version>
 
   <name>jeluard github parent POM</name>
   <description>Parent POM for jeluard OpenSource projects</description>
