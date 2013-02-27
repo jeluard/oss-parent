@@ -34,8 +34,10 @@ Use following snippet as a basis for a new project:
 To do a complete release:
 
 ```
+mvn clean install
 mvn release:prepare
 mvn release:perform
+mvn nexus-staging:release
 ```
 
 You might want to run following before:
