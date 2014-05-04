@@ -215,11 +215,6 @@
             <version>1.0-beta-2</version>
           </dependency>
           <dependency>
-            <groupId>org.semver</groupId>
-            <artifactId>enforcer-rule</artifactId>
-            <version>0.9.18</version>
-          </dependency>
-          <dependency>
             <groupId>com.github.jeluard.parent-enforcer-rule</groupId>
             <artifactId>enforcer-rule</artifactId>
             <version>1.0.2</version>
@@ -257,20 +252,6 @@
               <fail>false</fail>
               <rules>
                 <dependencyConvergence />
-              </rules>
-            </configuration>
-          </execution>
-          <execution>
-            <id>enforce-backward-compatibility</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireBackwardCompatibility implementation="org.semver.enforcer.RequireBackwardCompatibility">
-                  <compatibilityType>BACKWARD_COMPATIBLE_USER</compatibilityType>
-                </requireBackwardCompatibility>
               </rules>
             </configuration>
           </execution>
